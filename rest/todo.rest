@@ -1,0 +1,54 @@
+Get http://localhost:3000/todo HTTP/1.1
+
+###
+//get todos (pagination)
+Get http://localhost:3000/todo?page=2&limit=2 HTTP/1.1
+
+
+###
+Get http://localhost:3000/todo/634ce8576f83525ebf9c5cde HTTP/1.1
+
+
+###
+POST http://localhost:3000/todo HTTP/1.1
+Content-Type: application/json
+
+[
+    {
+    "title": "Read a book",
+    "description": "Read a book about node.js",
+    "dueDate": "2022-11-05"
+    },
+    {
+    "title": "Go to the gym",
+    "description": "Go to the gym and do some exercises",
+    "dueDate": "2022-10-10"
+    },
+    {
+    "title": "Visit my parents",
+    "description": "Visit my parents and have a dinner with them",
+    "dueDate": "2022-12-25"
+    },
+    {
+    "title": "Go to the cinema",
+    "description": "Go to the cinema and watch a movie",
+    "dueDate": "2022-11-11"
+    },
+    {
+    "title": "Go to the beach",
+    "description": "Go to the beach and swim",
+    "dueDate": "2022-09-01",
+    "isCompleted": true
+    }
+]
+
+###
+PATCH http://localhost:3000/todo/634ce8576f83525ebf9c5cde HTTP/1.1
+Content-Type: application/json
+
+{
+    "isCompleted": true
+}
+
+###
+DELETE  http://localhost:3000/todo/634ce8576f83525ebf9c5cde HTTP/1.1
